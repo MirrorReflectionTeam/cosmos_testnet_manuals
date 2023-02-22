@@ -177,3 +177,58 @@ nibid status 2>&1 | jq .SyncInfo
 echo $(nibid tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.nibid/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
+#### Remove node
+
+```
+sudo systemctl stop nibid && sudo systemctl disable nibid && sudo rm /etc/systemd/system/nibid.service && sudo systemctl daemon-reload && rm -rf $HOME/.nibid && rm -rf $HOME/nibiru && sudo rm $(which nibid) 
+```
+
+## Service Management
+
+#### Reload service configuration
+
+```
+sudo systemctl daemon-reload
+```
+
+#### Enable service
+
+```
+sudo systemctl enable nibid
+```
+
+#### Disable service
+
+```
+sudo systemctl disable nibid
+```
+
+#### Start service
+
+```
+sudo systemctl start nibid
+```
+
+#### Stop service
+
+```
+sudo systemctl stop nibid
+```
+
+#### Restart service
+
+```
+sudo systemctl restart nibid
+```
+
+#### Check service status
+
+```
+sudo systemctl status nibid
+```
+
+#### Check service logs
+
+```
+sudo journalctl -u nibid -f --no-hostname -o cat
+```
