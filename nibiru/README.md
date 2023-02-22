@@ -6,7 +6,7 @@
 
 <figure><img src="https://github.com/MirrorReflectionTeam/cosmos_testnet_manuals/blob/main/project_files/nibiru.jpg" width="150" alt=""><figcaption></figcaption></figure>
 
-**[Website](https://nibiru.fi/)**
+**[Website](https://nibiru.fi/)** | **[Explorer](https://nibiru.explorers.guru/)**
 
 ### Hardware Requirements
 
@@ -173,4 +173,10 @@ nibid tx staking create-validator \
 --gas=auto \
 --gas-prices=0.025unibi \
 -y
+```
+
+### View validator details
+
+```
+nibid q staking validator $(nibid keys show wallet --bech val -a)
 ```
