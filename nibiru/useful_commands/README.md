@@ -1,18 +1,18 @@
 ## KEY
 
-### Add new key
+#### Add new key
 
 ```
 nibid keys add wallet
 ```
 
-### Recover Existing Key
+#### Recover Existing Key
 
 ```
 nibid keys add wallet --recover
 ```
 
-### Query Wallet Balance
+#### Query Wallet Balance
 
 ```
 nibid q bank balances $(nibid keys show wallet -a)
@@ -21,7 +21,7 @@ nibid q bank balances $(nibid keys show wallet -a)
 ## Validator
 
 
-### Create new validator
+#### Create new validator
 ```
 nibid tx staking create-validator \
 --amount=10000000unibi \
@@ -39,7 +39,7 @@ nibid tx staking create-validator \
 -y
 ```
 
-### Edit existing validator
+#### Edit existing validator
 
 ```
 nibid tx staking edit-validator \
@@ -56,13 +56,13 @@ nibid tx staking edit-validator \
 -y
 ```
 
-### Unjail validator
+#### Unjail validator
 
 ```
 nibid tx slashing unjail --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
 ```
 
-### View validator details
+#### View validator details
 
 ```
 nibid q staking validator $(nibid keys show wallet --bech val -a)
@@ -70,34 +70,71 @@ nibid q staking validator $(nibid keys show wallet --bech val -a)
 
 ## Tokens
 
-### Withdraw commission and rewards from your validator
+#### Withdraw commission and rewards from your validator
 
 ```
 nibid tx distribution withdraw-rewards $(nibid keys show wallet --bech val -a) --commission --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
 ```
 
-### Delegate tokens to yourself
+#### Delegate tokens to yourself
 
 ```
 nibid tx staking delegate $(nibid keys show wallet --bech val -a) 1000000unibi --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
 ```
 
-### Delegate tokens to validator
+#### Delegate tokens to validator
 
 ```
 nibid tx staking delegate <TO_VALOPER_ADDRESS> 1000000unibi --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
 ```
 
-### Unbond tokens from your validator
+#### Unbond tokens from your validator
 
 ```
 nibid tx staking unbond $(nibid keys show wallet --bech val -a) 1000000unibi --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
 ```
 
-### Send tokens to wallet
+#### Send tokens to wallet
 
 ```
 nibid tx bank send wallet <TO_WALLET_ADDRESS> 1000000unibi --from wallet --chain-id nibiru-testnet-2
 ```
+
+## Governance
+
+#### List all proposals
+
+```
+nibid query gov proposals
+```
+
+#### View proposal by id
+
+```
+nibid query gov proposal 1
+```
+
+#### Vote 'Yes'
+
+```
+nibid tx gov vote 1 yes --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
+
+#### Vote 'No'
+
+```
+nibid tx gov vote 1 no --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
+
+#### Vote 'Abstain'
+
+```
+nibid tx gov vote 1 abstain --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
+
+#### Vote 'No With Veto'
+
+```
+nibid tx gov vote 1 nowithveto --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
 
 
