@@ -81,3 +81,47 @@ sed -i \
   $HOME/.nibid/config/app.toml
 ```
 
+### Set minimum gas price
+
+```
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.025unibi"|g' $HOME/.nibid/config/app.toml
+```
+
+### Resetting data
+
+```
+nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book
+```
+
+### Create a service
+
+```
+sudo tee /etc/systemd/system/nibid.service > /dev/null << EOF
+[Unit]
+Description=Nibiru Node
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which nibid) start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+### Download snapshot
+
+```
+curl -L https://snapshots.kjnodes.com/nibiru-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nibid/data
+```
+
+### Start service and check the logs
+
+```
+sudo systemctl daemon-reload
+sudo systemctl enable nibid
+sudo systemctl start nibid
+sudo journalctl -u nibid -f --no-hostname -o cat
+```
