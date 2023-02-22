@@ -67,3 +67,37 @@ nibid tx slashing unjail --from wallet --chain-id nibiru-testnet-2 --gas-adjustm
 ```
 nibid q staking validator $(nibid keys show wallet --bech val -a)
 ```
+
+## Tokens
+
+### Withdraw commission and rewards from your validator
+
+```
+nibid tx distribution withdraw-rewards $(nibid keys show wallet --bech val -a) --commission --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
+
+### Delegate tokens to yourself
+
+```
+nibid tx staking delegate $(nibid keys show wallet --bech val -a) 1000000unibi --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
+
+### Delegate tokens to validator
+
+```
+nibid tx staking delegate <TO_VALOPER_ADDRESS> 1000000unibi --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
+
+### Unbond tokens from your validator
+
+```
+nibid tx staking unbond $(nibid keys show wallet --bech val -a) 1000000unibi --from wallet --chain-id nibiru-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
+
+### Send tokens to wallet
+
+```
+nibid tx bank send wallet <TO_WALLET_ADDRESS> 1000000unibi --from wallet --chain-id nibiru-testnet-2
+```
+
+
