@@ -127,3 +127,22 @@ sudo systemctl enable nibid
 sudo systemctl start nibid
 sudo journalctl -u nibid -f --no-hostname -o cat
 ```
+
+### Create Validator
+
+When node is synced you must see **FALSE** after command
+
+```
+nibid status 2>&1 | jq .SyncInfo.catching_up
+```
+
+If you see **FALSE**
+
+### Create wallet
+
+```
+nibid keys add wallet
+```
+
+**SAVE YOUR INPUT SEED PHRASE**
+
