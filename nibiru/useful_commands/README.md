@@ -161,7 +161,7 @@ sed -i \
 
 #### Get validator info
 
-```b
+```
 nibid status 2>&1 | jq .ValidatorInfo
 ```
 
