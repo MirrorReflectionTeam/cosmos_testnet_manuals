@@ -128,7 +128,7 @@ sudo systemctl start nibid
 sudo journalctl -u nibid -f --no-hostname -o cat
 ```
 
-### Create Validator
+### Management
 
 When node is synced you must see **FALSE** after command
 
@@ -144,5 +144,33 @@ If you see **FALSE**
 nibid keys add wallet
 ```
 
-**SAVE YOUR INPUT SEED PHRASE**
+SAVE YOUR INPUT SEED PHRASE (24 words)
 
+### SAVE PRIVATE VALIDATOR KEY
+
+/.nibid/config/priv_validator_key.json
+
+### Go to [discord channel](https://discord.gg/nibiru) #faucet and paste
+
+```
+!request YOUR_WALLET_ADDRESS
+```
+
+### Create Validator
+
+```
+nibid tx staking create-validator \
+--amount=10000000unibi \
+--pubkey=$(nibid tendermint show-validator) \
+--moniker="$NODE_MONIKER" \
+--chain-id=nibiru-testnet-2 \
+--commission-rate=0.05 \
+--commission-max-rate=0.2 \
+--commission-max-change-rate=0.05 \
+--min-self-delegation=1 \
+--from=wallet \
+--gas-adjustment=1.4 \
+--gas=auto \
+--gas-prices=0.025unibi \
+-y
+```
