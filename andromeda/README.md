@@ -12,7 +12,7 @@
 
 4CPU 16RAM 200GB
 
-**[Rent on Hetzner](https://hetzner.cloud/?ref=AwVksaI2T3Nz)**
+**[Rent on Hetzner](https://hetzner.cloud/?ref=AwVksaI2T3Nz)** | **[Rent on Contabo](https://contabo.com/en)**
 
 ### Install dependencies
 
