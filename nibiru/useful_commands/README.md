@@ -43,16 +43,16 @@ nibid tx staking create-validator \
 
 ```
 nibid tx staking edit-validator \
---moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL"
---chain-id nibiru-testnet-2 \
---commission-rate 0.05 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---gas-prices 0.025unibi \
+--moniker="YOUR_MONIKER_NAME" \
+--identity="YOUR_KEYBASE_ID" \
+--details="YOUR_DETAILS" \
+--website="YOUR_WEBSITE_URL"
+--chain-id=nibiru-testnet-2 \
+--commission-rate=0.05 \
+--from=wallet \
+--gas-adjustment=1.4 \
+--gas=auto \
+--gas-prices=0.025unibi \
 -y
 ```
 
