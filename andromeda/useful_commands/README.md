@@ -15,7 +15,7 @@ andromedad keys add wallet --recover
 #### Query Wallet Balance
 
 ```
-andromedad q bank balances $(nibid keys show wallet -a)
+andromedad q bank balances $(andromedad keys show wallet -a)
 ```
 
 ## Validator
