@@ -15,7 +15,7 @@ quasard keys add wallet --recover
 #### Query Wallet Balance
 
 ```
-quasard q bank balances $(andromedad keys show wallet -a)
+quasard q bank balances $(quasard keys show wallet -a)
 ```
 
 ## Validator
