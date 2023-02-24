@@ -77,6 +77,7 @@ sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_p
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
+  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "17"|' \
   $HOME/.quasarnode/config/app.toml
 ```
@@ -105,7 +106,7 @@ User=$USER
 ExecStart=$(which nibid) start
 Restart=on-failure
 RestartSec=10
-LimitNOFILE=65535
+LimitNOFILE=10000
 [Install]
 WantedBy=multi-user.target
 EOF
