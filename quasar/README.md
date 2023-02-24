@@ -85,7 +85,7 @@ sed -i \
 ### Set minimum gas price
 
 ```
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0uqsr\"|" $HOME/.quasarnode/config/app.toml
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0uqsr"|g' $HOME/.quasarnode/config/app.toml
 ```
 
 ### Resetting data
