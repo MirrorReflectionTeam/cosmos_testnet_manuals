@@ -99,14 +99,14 @@ quasard tendermint unsafe-reset-all --home $HOME/.quasarnode --keep-addr-book
 ```
 sudo tee /etc/systemd/system/quasard.service > /dev/null << EOF
 [Unit]
-Description=Quasar Node
+Description=quasar-testnet node
 After=network-online.target
 [Service]
 User=$USER
 ExecStart=$(which quasard) start
 Restart=on-failure
 RestartSec=10
-LimitNOFILE=10000
+LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
