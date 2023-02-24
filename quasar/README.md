@@ -46,6 +46,7 @@ cd || return
 curl -L https://github.com/quasar-finance/binary-release/raw/main/v0.0.2-alpha-11/quasarnoded-linux-amd64 > quasard
 chmod +x quasard
 sudo mv quasard /usr/local/bin/
+quasard version
 ```
 
 ### Initialize the node
