@@ -115,7 +115,7 @@ EOF
 ### Download snapshot
 
 ```
-curl "https://snapshots2-testnet.nodejumper.io/quasar-testnet/${SNAP_NAME}" | lz4 -dc - | tar -xf - -C "$HOME/.quasarnode"
+curl -L https://snapshots.kjnodes.com/quasar-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quasarnode
 ```
 
 ### Start service and check the logs
