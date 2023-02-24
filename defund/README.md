@@ -100,11 +100,11 @@ defundd tendermint unsafe-reset-all --home $HOME/.defund --keep-addr-book
 ```
 sudo tee /etc/systemd/system/defundd.service > /dev/null << EOF
 [Unit]
-Description=defund-testnet node service
+Description=defund-testnet node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which nibid) start
+ExecStart=$(which defundd) start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -116,7 +116,7 @@ EOF
 ### Download snapshot
 
 ```
-curl -L https://snapshots.kjnodes.com/defund-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.defund
+curl "https://snapshots2-testnet.nodejumper.io/defund-testnet/${SNAP_NAME}" | lz4 -dc - | tar -xf - -C "$HOME/.defund"
 ```
 
 ### Start service and check the logs
