@@ -177,5 +177,5 @@ quasard tx staking create-validator \
 ### View validator details
 
 ```
-quasard q staking validator $(andromedad keys show wallet --bech val -a)
+quasard q staking validator $(quasard keys show wallet --bech val -a)
 ```
