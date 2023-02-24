@@ -99,7 +99,7 @@ quasard tendermint unsafe-reset-all --home $HOME/.quasarnode --keep-addr-book
 ```
 sudo tee /etc/systemd/system/quasard.service > /dev/null << EOF
 [Unit]
-Description=quasar-testnet node
+Description=Quasar Node
 After=network-online.target
 [Service]
 User=$USER
