@@ -103,7 +103,7 @@ Description=Quasar Node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which nibid) start
+ExecStart=$(which quasard) start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=10000
