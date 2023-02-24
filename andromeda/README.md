@@ -100,11 +100,11 @@ andromedad tendermint unsafe-reset-all --home $HOME/.andromedad --keep-addr-book
 ```
 sudo tee /etc/systemd/system/andromedad.service > /dev/null << EOF
 [Unit]
-Description=andromeda-testnet node service
+Description=andromeda-testnet node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which nibid) start
+ExecStart=$(which andromedad) start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
