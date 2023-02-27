@@ -46,28 +46,29 @@ cd $HOME
 rm -rf nibiru
 git clone https://github.com/NibiruChain/nibiru.git
 cd nibiru
-git checkout v0.16.3
+git checkout v0.19.2
 make install
+nibid version
 ```
 
 ### Initialize the node
 
 ```
-nibid config chain-id nibiru-testnet-2
-nibid init "$NODE_MONIKER" --chain-id nibiru-testnet-2
+nibid config chain-id nibiru-itn-1
+nibid init "$NODE_MONIKER" --chain-id nibiru-itn-1
 ```
 
 ### Download genesis and addrbook
 
 ```
-curl -Ls https://snapshots.kjnodes.com/nibiru-testnet/genesis.json > $HOME/.nibid/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
+curl -Ls https://service.ppnv.space/nibiru/genesis.json > $HOME/.nibid/config/genesis.json
+curl -Ls https://service.ppnv.space/nibiru/addrbook.json > $HOME/.nibid/config/addrbook.json
 ```
 
 ### Add seeds
 
 ```
-SEEDS="dabcc13d6274f4dd86fd757c5c4a632f5062f817@seed-2.nibiru-testnet-2.nibiru.fi:26656,a5383b33a6086083a179f6de3c51434c5d81c69d@seed-1.nibiru-testnet-2.nibiru.fi:26656"
+SEEDS="df8596fa04abeff1d15b79570ff8c3eba85ed87a@35.185.8.9:26656,4a81486786a7c744691dc500360efcdaf22f0840@15.235.46.50:26656,c709cad9e11b315644fe8f1d2e90c03c5cba685c@34.91.8.241:26656,930b1eb3f0e57b97574ed44cb53b69fb65722786@144.76.30.36:15662,ad002a4592e7bcdfff31eedd8cee7763b39601e7@65.109.122.105:36656"
 PEERS=""
 sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.nibid/config/config.toml
 ```
@@ -151,10 +152,11 @@ SAVE YOUR INPUT SEED PHRASE (24 words)
 /.nibid/config/priv_validator_key.json
 
 ### Go to [discord channel](https://discord.gg/nibiru) #faucet and paste
-
 ```
 !request YOUR_WALLET_ADDRESS
 ```
+
+**or go https://app.nibiru.fi/faucet**
 
 ### Create Validator
 
@@ -163,7 +165,7 @@ nibid tx staking create-validator \
 --amount=10000000unibi \
 --pubkey=$(nibid tendermint show-validator) \
 --moniker="$NODE_MONIKER" \
---chain-id=nibiru-testnet-2 \
+--chain-id=nibiru-itn-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
