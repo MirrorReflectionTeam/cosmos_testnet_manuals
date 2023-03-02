@@ -166,7 +166,7 @@ nibid tx staking create-validator \
 --pubkey=$(nibid tendermint show-validator) \
 --moniker="$NODE_MONIKER" \
 --chain-id=nibiru-itn-1 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
 --min-self-delegation=1 \
