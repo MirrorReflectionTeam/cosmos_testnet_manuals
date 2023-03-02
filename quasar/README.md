@@ -163,7 +163,7 @@ quasard tx staking create-validator \
 --pubkey=$(quasard tendermint show-validator) \
 --moniker="$NODE_MONIKER" \
 --chain-id=qsr-questnet-04 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
 --min-self-delegation=1 \
