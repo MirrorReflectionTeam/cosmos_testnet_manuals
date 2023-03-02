@@ -28,7 +28,7 @@ defundd tx staking create-validator \
 --pubkey=$(defundd tendermint show-validator)
 --moniker="YOUR_MONIKER_NAME" \
 --chain-id=defund-private-4 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
 --min-self-delegation=1 \
@@ -48,7 +48,7 @@ defundd tx staking edit-validator \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
 --chain-id=defund-private-4 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
