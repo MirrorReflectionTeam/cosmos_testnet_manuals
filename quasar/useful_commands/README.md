@@ -28,9 +28,9 @@ quasard tx staking create-validator \
 --pubkey=$(quasard tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --chain-id=qsr-questnet-04 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --commission-max-rate=0.20 \
---commission-max-change-rate=0.01 \
+--commission-max-change-rate=0.05 \
 --min-self-delegation=1 \
 --from=wallet \
 --gas-adjustment=1.4 \
@@ -48,7 +48,7 @@ quasard tx staking edit-validator \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
 --chain-id=qsr-questnet-04 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
