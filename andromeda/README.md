@@ -164,7 +164,7 @@ andromedad tx staking create-validator \
 --pubkey=$(andromedad tendermint show-validator) \
 --moniker="$NODE_MONIKER" \
 --chain-id=galileo-3 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
 --min-self-delegation=1 \
