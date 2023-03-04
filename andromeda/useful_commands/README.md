@@ -88,6 +88,12 @@ andromedad tx staking delegate $(andromedad keys show wallet --bech val -a) 1000
 andromedad tx staking delegate <TO_VALOPER_ADDRESS> 1000000uandr --from wallet --chain-id galileo-3 --gas-prices 0.1uandr --gas-adjustment 1.4 --gas auto -y 
 ```
 
+#### Redelegate tokens to validator
+
+```
+andromedad tx staking redelegate $(andromedad keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uandr --from wallet --chain-id galileo-3 --gas-prices 0.1uandr --gas-adjustment 1.4 --gas auto -y 
+```
+
 #### Unbond tokens from your validator
 
 ```
@@ -165,10 +171,16 @@ sed -i \
 andromedad status 2>&1 | jq .ValidatorInfo
 ```
 
-#### Get sync info
+#### Get catching Up
 
 ```
-andromedad status 2>&1 | jq .SyncInfo
+andromedad status 2>&1 | jq .SyncInfo.catching_up
+```
+
+#### Get latest height
+
+```
+andromedad status 2>&1 | jq .SyncInfo.latest_block_height
 ```
 
 #### Get node peer
