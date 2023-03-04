@@ -88,6 +88,11 @@ defundd tx staking delegate $(defundd keys show wallet --bech val -a) 1000000ufe
 defundd tx staking delegate <TO_VALOPER_ADDRESS> 1000000ufetf --from wallet --chain-id defund-private-4 --gas-prices 0.1ufetf --gas-adjustment 1.4 --gas auto -y 
 ```
 
+#### Redelegate tokens to validator
+```
+defundd tx staking redelegate $(defundd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ufetf --from wallet --chain-id defund-private-4 --gas-prices 0.1ufetf --gas-adjustment 1.4 --gas auto -y 
+```
+
 #### Unbond tokens from your validator
 
 ```
