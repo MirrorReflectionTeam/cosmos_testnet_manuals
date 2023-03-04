@@ -88,6 +88,12 @@ quasard tx staking delegate $(quasard keys show wallet --bech val -a) 1000000uqs
 quasard tx staking delegate <TO_VALOPER_ADDRESS> 1000000uqsr --from wallet --chain-id qsr-questnet-04 --gas-adjustment 1.4 --gas auto --gas-prices 0uqsr -y 
 ```
 
+#### Redelegate tokens to validator
+
+```
+quasard tx staking redelegate $(quasard keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uqsr --from wallet --chain-id qsr-questnet-04 --gas-adjustment 1.4 --gas auto --gas-prices 0uqsr -y
+```
+
 #### Unbond tokens from your validator
 
 ```
