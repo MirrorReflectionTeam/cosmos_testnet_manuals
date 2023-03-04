@@ -171,16 +171,10 @@ sed -i \
 andromedad status 2>&1 | jq .ValidatorInfo
 ```
 
-#### Get catching Up
+#### Get sync info
 
 ```
-andromedad status 2>&1 | jq .SyncInfo.catching_up
-```
-
-#### Get latest height
-
-```
-andromedad status 2>&1 | jq .SyncInfo.latest_block_height
+andromedad status 2>&1 | jq .SyncInfo
 ```
 
 #### Get node peer
