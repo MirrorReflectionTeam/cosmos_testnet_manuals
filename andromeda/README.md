@@ -149,7 +149,7 @@ SAVE YOUR INPUT SEED PHRASE (24 words)
 ### SAVE PRIVATE VALIDATOR KEY
 
 ```
-cat $HOME/.nibid/config/priv_validator_key.json
+cat $HOME/.andromedad/config/priv_validator_key.json
 ```
 
 ### Go to [discord channel](https://discord.gg/EXEYrRUPfT) #faucet-pub and paste
