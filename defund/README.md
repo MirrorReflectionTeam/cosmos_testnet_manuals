@@ -148,7 +148,9 @@ SAVE YOUR INPUT SEED PHRASE (24 words)
 
 ### SAVE PRIVATE VALIDATOR KEY
 
-/.defund/config/priv_validator_key.json
+```
+cat $HOME/.defund/config/priv_validator_key.json
+```
 
 ### Go to [discord channel](https://discord.gg/cw5N3P5z5M) #faucet and paste
 
