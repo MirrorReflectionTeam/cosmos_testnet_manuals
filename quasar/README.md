@@ -147,7 +147,9 @@ SAVE YOUR INPUT SEED PHRASE (24 words)
 
 ### SAVE PRIVATE VALIDATOR KEY
 
-/.quasarnode/config/priv_validator_key.json
+```
+cat $HOME/.quasarnode/config/priv_validator_key.json
+```
 
 ### Go to [discord channel](https://discord.gg/quasarfi) #tesnet-fauset and paste
 
