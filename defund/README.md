@@ -26,7 +26,7 @@ sudo apt -qy upgrade
 
 ```
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.19.6.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+curl -Ls https://go.dev/dl/go1.19.7.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
 eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
@@ -46,15 +46,15 @@ cd $HOME
 rm -rf defund
 git clone https://github.com/defund-labs/defund.git
 cd defund
-git checkout v0.2.4
+git checkout v0.2.6
 make install
 ```
 
 ### Initialize the node
 
 ```
-defundd config chain-id defund-private-4
-defundd init "$NODE_MONIKER" --chain-id defund-private-4
+defundd config chain-id orbit-alpha-1
+defundd init "$NODE_MONIKER" --chain-id orbit-alpha-1
 ```
 
 ### Download genesis and addrbook
@@ -67,9 +67,7 @@ curl -Ls https://snapshots.kjnodes.com/defund-testnet/addrbook.json > $HOME/.def
 ### Add seeds
 
 ```
-SEEDS="d837b7f78c03899d8964351fb95c78e84128dff6@174.83.6.129:30791,f03f3a18bae28f2099648b1c8b1eadf3323cf741@162.55.211.136:26656"
-PEERS=""
-sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.defund/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@defund-testnet.rpc.kjnodes.com:40659\"|" $HOME/.defund/config/config.toml
 ```
 
 ### Set pruning
@@ -86,7 +84,7 @@ sed -i \
 ### Set minimum gas price
 
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0001ufetf"|g' $HOME/.defund/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ufetf\"|" $HOME/.defund/config/app.toml
 ```
 
 ### Resetting data
@@ -116,7 +114,7 @@ EOF
 ### Download snapshot
 
 ```
-curl "https://snapshots2-testnet.nodejumper.io/defund-testnet/${SNAP_NAME}" | lz4 -dc - | tar -xf - -C "$HOME/.defund"
+curl -L https://snapshots.kjnodes.com/defund-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.defund
 ```
 
 ### Start service and check the logs
@@ -133,7 +131,7 @@ sudo journalctl -u defundd -f --no-hostname -o cat
 When node is synced you must see **FALSE** after command
 
 ```
-curl -s localhost:26657/status | jq .result.sync_info.catching_up
+defundd status 2>&1 | jq .SyncInfo.catching_up
 ```
 
 If you see **FALSE**
@@ -165,7 +163,7 @@ defundd tx staking create-validator \
 --amount=10000000ufetf \
 --pubkey=$(defundd tendermint show-validator) \
 --moniker="$NODE_MONIKER" \
---chain-id=defund-private-4 \
+--chain-id=orbit-alpha-1 \
 --commission-rate=0.07 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
@@ -173,7 +171,7 @@ defundd tx staking create-validator \
 --from=wallet \
 --gas-adjustment 1.4 \
 --gas auto \
---gas-prices=0.1ufetf \
+--gas-prices=0ufetf \
 -y
 ```
 
