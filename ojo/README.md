@@ -2,7 +2,7 @@
   <h1> Manual Installation </h1>
 </div>
 
-### Quasar
+### Ojo
 
 <figure><img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/ojo.jpg" width="150" alt=""><figcaption></figcaption></figure>
 
