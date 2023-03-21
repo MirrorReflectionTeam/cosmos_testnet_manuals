@@ -204,3 +204,82 @@ ojod keys add pricefeeder-wallet --keyring-backend os
 ```
 
 SAVE YOUR INPUT SEED PHRASE (24 words)
+
+### Fund the pricefeeder-wallet with some testnet tokens
+
+```
+ojod tx bank send wallet YOUR_FEEDER_ADDRESS 10000000uojo --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y
+```
+
+### View the balance
+
+```
+ojod q bank balances $(ojod keys show feeder-wallet --keyring-backend os -a)
+```
+
+### Set up variables
+
+```
+KEYRING_PASSWORD=YOUR_KEYRING_PASSWORD
+CHAIN_ID=ojo-devnet
+GRPC="localhost:9090"
+RPC="http://localhost:26657"
+WALLET_ADDRESS=$(ojod keys show wallet -a)
+FEEDER_ADDRESS=$(ojod keys show feeder-wallet --keyring-backend os -a)
+VALIDATOR_ADDRESS=$(ojod keys show wallet --bech val -a)
+```
+
+### Delegate pricefeeder responsibility
+
+```
+ojod tx oracle delegate-feed-consent $WALLET_ADDRESS $FEEDER_ADDRESS --from wallet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y
+```
+
+### Check linked pricefeeder address
+
+```
+ojod q oracle feeder-delegation $VALIDATOR_ADDRESS
+```
+
+### Set pricefeeder configuration values
+
+```
+sed -i '/^dir *=.*/a pass = ""' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^address *=.*|address = "'$FEEDER_ADDRESS'"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^chain_id *=.*|chain_id = "'$CHAIN_ID'"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^validator *=.*|validator = "'$VALIDATOR_ADDRESS'"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^backend *=.*|backend = "os"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^dir *=.*|dir = "'$HOME/.ojo'"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^pass *=.*|pass = "'$KEYRING_PASSWORD'"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^grpc_endpoint *=.*|grpc_endpoint = "'$GRPC'"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^tmrpc_endpoint *=.*|tmrpc_endpoint = "'$RPC'"|g' $HOME/.price-feeder/price-feeder.toml
+sed -i 's|^global-labels *=.*|global-labels = [["chain_id", "'$CHAIN_ID'"]]|g' $HOME/.price-feeder/price-feeder.toml
+```
+
+### Setup the systemd service
+
+```
+sudo tee /etc/systemd/system/price-feeder.service > /dev/null << EOF
+[Unit]
+Description=Ojo Price Feeder
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which price-feeder) $HOME/.price-feeder/price-feeder.toml --log-level debug
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+Environment="PRICE_FEEDER_PASS=$KEYRING_PASSWORD"
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+### Start the systemd service and check the logs
+
+```
+sudo systemctl daemon-reload
+sudo systemctl enable price-feeder
+sudo systemctl start price-feeder
+sudo journalctl -u price-feeder -f --no-hostname -o cat
+```
