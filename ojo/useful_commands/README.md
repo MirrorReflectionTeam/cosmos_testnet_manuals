@@ -123,22 +123,26 @@ ojod query gov proposal 1
 #### Vote 'Yes'
 
 ```
-ojod tx gov vote 1 yes --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y```
+ojod tx gov vote 1 yes --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y
+```
 
 #### Vote 'No'
 
 ```
-ojod tx gov vote 1 no --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y```
+ojod tx gov vote 1 no --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y
+```
 
 #### Vote 'Abstain'
 
 ```
-ojod tx gov vote 1 abstain --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y```
+ojod tx gov vote 1 abstain --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y
+```
 
 #### Vote 'No With Veto'
 
 ```
-ojod tx gov vote 1 NoWithVeto --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y```
+ojod tx gov vote 1 NoWithVeto --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y
+```
 
 ## Utility
 
