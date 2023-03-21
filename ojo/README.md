@@ -103,7 +103,7 @@ Description=ojo-testnet node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which quasard) start
+ExecStart=$(which ojod) start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
