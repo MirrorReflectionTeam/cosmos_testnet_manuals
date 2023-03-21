@@ -175,7 +175,7 @@ ojod tx staking create-validator \
 ### View validator details
 
 ```
-ojod q staking validator $(quasard keys show wallet --bech val -a)
+ojod q staking validator $(ojod keys show wallet --bech val -a)
 ```
 
 ### Install pricefeeder
