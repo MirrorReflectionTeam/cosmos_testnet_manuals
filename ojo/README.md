@@ -224,6 +224,8 @@ KEYRING_PASSWORD=YOUR_KEYRING_PASSWORD
 CHAIN_ID=ojo-devnet
 GRPC="localhost:9090"
 RPC="http://localhost:26657"
+```
+```
 WALLET_ADDRESS=$(ojod keys show wallet -a)
 FEEDER_ADDRESS=$(ojod keys show feeder-wallet --keyring-backend os -a)
 VALIDATOR_ADDRESS=$(ojod keys show wallet --bech val -a)
