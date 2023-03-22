@@ -158,7 +158,7 @@ cat $HOME/.ojo/config/priv_validator_key.json
 ```
 ojod tx staking create-validator \
 --amount=1000000uojo \
---pubkey=$(quasard tendermint show-validator) \
+--pubkey=$(ojod tendermint show-validator) \
 --moniker="$NODE_MONIKER" \
 --chain-id=ojo-devnet \
 --commission-rate=0.07 \
