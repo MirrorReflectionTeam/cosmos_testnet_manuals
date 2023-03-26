@@ -8,6 +8,14 @@
 
 **[Website](https://nibiru.fi/)** | **[Explorer](https://nibiru.explorers.guru/)**
 
+### Public endpoints
+
+- **https://rpc.nibiru-testnet.mirror-reflection.com**
+
+- **https://grpc.nibiru-testnet.mirror-reflection.com**
+
+- **https://api.nibiru-testnet.mirror-reflection.com**
+
 ### Hardware Requirements
 
 8CPU 32RAM 200GB
