@@ -8,6 +8,15 @@
 
 **[Website](https://www.defund.app/)** | **[Explorer](https://defund.explorers.guru/)**
 
+### Public endpoints
+
+- **https://rpc.defund-testnet.mirror-reflection.com**
+
+- **https://grpc.defund-testnet.mirror-reflection.com**
+
+- **https://api.defund-testnet.mirror-reflection.com**
+
+
 ### Hardware Requirements
 
 8CPU 32RAM 200GB
