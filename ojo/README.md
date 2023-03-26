@@ -8,6 +8,14 @@
 
 **[Website](https://ojo.network/)** | **[Explorer](https://ojo.explorers.guru/)**
 
+### Public endpoints
+
+- **https://rpc.ojo-testnet.mirror-reflection.com**
+
+- **https://grpc.ojo-testnet.mirror-reflection.com**
+
+- **https://api.ojo-testnet.mirror-reflection.com**
+
 ### Hardware Requirements
 
 4CPU 16RAM 200GB
