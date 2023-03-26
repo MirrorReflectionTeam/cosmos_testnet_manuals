@@ -8,6 +8,14 @@
 
 **[Website](https://andromedaprotocol.io/)** | **[Explorer](https://andromeda.explorers.guru/)**
 
+### Public endpoints
+
+- **https://rpc.andromeda-testnet.mirror-reflection.com**
+
+- **https://grpc.andromeda-testnet.mirror-reflection.com**
+
+- **https://api.andromeda-testnet.mirror-reflection.com**
+
 ### Hardware Requirements
 
 4CPU 16RAM 200GB
