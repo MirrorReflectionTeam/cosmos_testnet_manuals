@@ -1,14 +1,10 @@
 <div align="center">
-  <h2> Instructions </h2>
+  <h2> Snapshot </h2>
 </div>
 
 > #### Snapshots allow the blockchain node to join the network in a matter of minutes by downloading our file which is a backup copy of the node. A snapshot contains a compressed copy of the date directory.
 >
 > #### Snapshots are taken automatically every 4 hours
-
-<div align="center">
-  <h2> Snapshot </h2>
-</div>
 
 ```
 sudo systemctl stop nibid
@@ -24,11 +20,11 @@ sudo systemctl start nibid
 sudo journalctl -u nibid -f --no-hostname -o cat
 ```
 
-> #### State Sync allows a new node to join the network without completely downloading the entire blockchain node. This helps with server memory shortage. State Sync can cut down time to synchronization from days to minutes.
-
 <div align="center">
   <h2> State Sync </h2>
 </div>
+
+> #### State Sync allows a new node to join the network without completely downloading the entire blockchain node. This helps with server memory shortage. State Sync can cut down time to synchronization from days to minutes.
 
 
 ```
