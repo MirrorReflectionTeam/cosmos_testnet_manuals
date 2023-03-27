@@ -2,13 +2,13 @@
   <h2> Instructions </h2>
 </div>
 
-> #### Snapshots allow the blockchain node to join the network in a matter of minutes by downloading our file which is a backup copy of the node. A snapshot contains a compressed copy of the date directory.
->
-> #### Snapshots are taken automatically every 4 hours
-
 <div align="center">
   <h2> Snapshot </h2>
 </div>
+
+> #### Snapshots allow the blockchain node to join the network in a matter of minutes by downloading our file which is a backup copy of the node. A snapshot contains a compressed copy of the date directory.
+>
+> #### Snapshots are taken automatically every 4 hours
 
 ```
 sudo systemctl stop nibid
