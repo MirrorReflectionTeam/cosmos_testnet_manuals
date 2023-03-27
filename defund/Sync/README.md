@@ -1,12 +1,14 @@
 <div align="center">
   <h2> Snapshot </h2>
 </div>
+
 ```
 Snapshots allow the blockchain node to join the 
 network in a matter of minutes by downloading our 
 file which is a backup copy of the node. 
 A snapshot contains a compressed copy of the date directory.
 ```
+
 <div align="center">
   <h6> Snapshots are taken automatically every 4 hours </h6>
 </div>
