@@ -23,6 +23,7 @@ mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validato
 sudo systemctl start nibid
 sudo journalctl -u nibid -f --no-hostname -o cat
 ```
+
 > #### State Sync allows a new node to join the network without completely downloading the entire blockchain node. This helps with server memory shortage. State Sync can cut down time to synchronization from days to minutes.
 
 <div align="center">
