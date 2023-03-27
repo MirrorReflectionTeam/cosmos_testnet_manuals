@@ -69,7 +69,7 @@ nibid init "$NODE_MONIKER" --chain-id nibiru-itn-1
 ### Download genesis and addrbook
 
 ```
-curl -s https://rpc.itn-1.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
+curl -s https:/rpc.nibiru-testnet.mirror-reflection.com/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
 curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 ```
 
