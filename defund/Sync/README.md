@@ -2,14 +2,6 @@
   <h2> Snapshot </h2>
 </div>
 
-##### Install dependencies if you needed
-
-```
-sudo apt -q update
-sudo apt -qy install curl git jq lz4 build-essential
-sudo apt -qy upgrade
-```
-
 ##### Instructions
 
 ```
