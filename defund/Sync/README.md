@@ -9,6 +9,7 @@
 <div align="center">
   <h2> Snapshot </h2>
 </div>
+
 ```
 sudo systemctl stop defundd
 
