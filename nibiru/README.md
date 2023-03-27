@@ -69,8 +69,8 @@ nibid init "$NODE_MONIKER" --chain-id nibiru-itn-1
 ### Download genesis and addrbook
 
 ```
-curl -Ls https://service.ppnv.space/nibiru/genesis.json > $HOME/.nibid/config/genesis.json
-curl -Ls https://service.ppnv.space/nibiru/addrbook.json > $HOME/.nibid/config/addrbook.json
+curl -s https://rpc.itn-1.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
+curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 ```
 
 ### Add seeds
@@ -125,7 +125,7 @@ EOF
 ### Download snapshot
 
 ```
-curl -L https://snapshots.kjnodes.com/nibiru-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nibid
+curl https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/nibiru-testnet/nibiru-itn-1_latest.tar | tar -xf - -C $HOME/.nibid/data
 ```
 
 ### Start service and check the logs
