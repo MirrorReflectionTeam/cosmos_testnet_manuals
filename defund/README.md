@@ -69,14 +69,16 @@ defundd init "$NODE_MONIKER" --chain-id orbit-alpha-1
 ### Download genesis and addrbook
 
 ```
-curl -Ls https://snapshots.kjnodes.com/defund-testnet/genesis.json > $HOME/.defund/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/defund-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
+curl -Ls https://rpc.defund-testnet.mirror-reflection.com/genesis | jq -r .result.genesis > $HOME/.defund/config/genesis.json
+curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/defund-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
 ```
 
 ### Add seeds
 
 ```
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@defund-testnet.rpc.kjnodes.com:40659\"|" $HOME/.defund/config/config.toml
+SEEDS="1f3d588a560c1560d3862c364006fc984e6b51a9@rpc.defund-testnet.mirror-reflection.com:26656,3f472746f46493309650e5a033076689996c8881@defund-testnet.rpc.kjnodes.com:40659"
+PEERS=""
+sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.defund/config/config.toml
 ```
 
 ### Set pruning
@@ -123,7 +125,7 @@ EOF
 ### Download snapshot
 
 ```
-curl -L https://snapshots.kjnodes.com/defund-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.defund
+curl -L https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/defund-testnet/orbit-alpha-1_latest.tar | tar -xf - -C $HOME/.defund/data
 ```
 
 ### Start service and check the logs
