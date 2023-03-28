@@ -68,8 +68,8 @@ andromedad init "$NODE_MONIKER" --chain-id galileo-3
 ### Download genesis and addrbook
 
 ```
-curl -Ls https://snapshots.kjnodes.com/andromeda-testnet/genesis.json > $HOME/.andromedad/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/andromeda-testnet/addrbook.json > $HOME/.andromedad/config/addrbook.json
+curl -s https://rpc.andromeda-testnet.mirror-reflection.com/genesis | jq -r .result.genesis > $HOME/.andromedad/config/genesis.json
+curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/andromeda-testnet/addrbook.json > $HOME/.andromedad/config/addrbook.json
 ```
 
 ### Add seeds
@@ -124,7 +124,7 @@ EOF
 ### Download snapshot
 
 ```
-curl -L https://snapshots.kjnodes.com/andromeda-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.andromedad
+curl https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/andromeda-testnet/galileo-3_latest.tar | tar -xf - -C $HOME/.andromedad/data
 ```
 
 ### Start service and check the logs
