@@ -69,14 +69,16 @@ ojod init "$NODE_MONIKER" --chain-id ojo-devnet
 ### Download genesis and addrbook
 
 ```
-curl -Ls https://snapshots.kjnodes.com/ojo-testnet/genesis.json > $HOME/.ojo/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/ojo-testnet/addrbook.json > $HOME/.ojo/config/addrbook.json
+curl -Ls https://rpc.ojo-testnet.mirror-reflection.com/genesis | jq -r .result.genesis > $HOME/.ojo/config/genesis.json
+curl -Ls https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/ojo-testnet/addrbook.json > $HOME/.ojo/config/addrbook.json
 ```
 
 ### Add seeds
 
 ```
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@ojo-testnet.rpc.kjnodes.com:50659\"|" $HOME/.ojo/config/config.toml
+SEEDS="5264a9742c3e2fdb3803ff4af0ecb6e127c73ab1@rpc.ojo-testnet.mirror-reflection.com:27656,3f472746f46493309650e5a033076689996c8881@ojo-testnet.rpc.kjnodes.com:50659"
+PEERS=""
+sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.ojo/config/config.toml
 ```
 
 ### Set pruning
@@ -123,7 +125,7 @@ EOF
 ### Download snapshot
 
 ```
-curl -L https://snapshots.kjnodes.com/ojo-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.ojo
+curl https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/ojo-testnet/ojo-devnet_latest.tar | tar -xf - -C $HOME/.ojo/data
 ```
 
 ### Start service and check the logs
