@@ -6,7 +6,7 @@
 
 <figure><img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/andromeda.jpg" width="150" alt=""><figcaption></figcaption></figure>
 
-**[Website](https://andromedaprotocol.io/)** | **[Explorer](https://andromeda.explorers.guru/)**
+**[Website](https://andromedaprotocol.io/)** | **[Explorer](https://andromeda.exploreme.pro/)**
 
 ### Public endpoints
 
