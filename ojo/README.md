@@ -6,7 +6,7 @@
 
 <figure><img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/ojo.jpg" width="150" alt=""><figcaption></figcaption></figure>
 
-**[Website](https://ojo.network/)** | **[Explorer](https://ojo.explorers.guru/)**
+**[Website](https://ojo.network/)** | **[Explorer](https://ojo.exploreme.pro/)**
 
 ### Public endpoints
 
