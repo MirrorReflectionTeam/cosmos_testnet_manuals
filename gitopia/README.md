@@ -47,7 +47,7 @@ Replace YOUR_MONIKER_NAME with your node name
 NODE_MONIKER="YOUR_MONIKER_NAME"
 ```
 
-### Add Gitopia remote helpe 
+### Add Gitopia remote helper
 ```
 curl -Ls https://get.gitopia.com | sudo bash
 ```
