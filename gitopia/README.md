@@ -47,13 +47,18 @@ Replace YOUR_MONIKER_NAME with your node name
 NODE_MONIKER="YOUR_MONIKER_NAME"
 ```
 
+### Add Gitopia remote helpe 
+```
+curl -Ls https://get.gitopia.com | sudo bash
+```
+
 ### Download and build binaries
 
 ```
 cd $HOME
 rm -rf gitopia
 git clone gitopia://Gitopia/gitopia
-cd gitopia || return
+cd gitopia 
 git checkout v1.2.0
 make install
 ```
@@ -68,7 +73,11 @@ gitopiad init "$NODE_MONIKER" --chain-id gitopia-janus-testnet-2
 ### Download genesis and addrbook
 
 ```
-curl -Ls https://rpc.gitopia-testnet.mirror-reflection.com/genesis | jq -r .result.genesis > $HOME/.gitopia/config/genesis.json
+
+curl -s https://server.gitopia.com/raw/gitopia/testnets/master/gitopia-janus-testnet-2/genesis.json.gz > ~/.gitopia/config/genesis.zip
+gunzip -c ~/.gitopia/config/genesis.zip > ~/.gitopia/config/genesis.json
+rm -rf ~/.gitopia/config/genesis.zip
+
 curl -Ls https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/gitopia-testnet/addrbook.json > $HOME/.gitopia/config/addrbook.json
 ```
 
