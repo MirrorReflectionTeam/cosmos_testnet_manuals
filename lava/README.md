@@ -52,10 +52,10 @@ NODE_MONIKER="YOUR_MONIKER_NAME"
 ```
 cd $HOME
 rm -rf lava
-git clone https://github.com/lavanet/lava.git
+git clone https://github.com/lavanet/lava
 cd lava
-git checkout v0.8.1
-make build
+git checkout v0.7.0
+make install
 lavad version
 ```
 
