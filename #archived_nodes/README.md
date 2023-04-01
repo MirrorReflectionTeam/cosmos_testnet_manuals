@@ -1,3 +1,3 @@
 <div align="center">
-  <h2> ARCHIVED NODES </h2>
+  <h3> ARCHIVED NODES </h3>
 </div>
