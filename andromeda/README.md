@@ -141,7 +141,7 @@ sudo journalctl -u andromedad -f --no-hostname -o cat
 When node is synced you must see **FALSE** after command
 
 ```
-curl -s localhost:26657/status | jq .result.sync_info.catching_up
+andromedad status 2>&1 | jq .SyncInfo.catching_up
 ```
 
 If you see **FALSE**

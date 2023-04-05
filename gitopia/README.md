@@ -1,7 +1,3 @@
-<div align="center">
-  <h1> Manual Installation </h1>
-</div>
-
 ### Gitopia
 
 <figure><img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/gitopia.png" width="150" alt=""><figcaption></figcaption></figure>
@@ -21,6 +17,18 @@
 8CPU 32RAM 200GB
 
 **[Rent on Hetzner](https://hetzner.cloud/?ref=AwVksaI2T3Nz)** | **[Rent on Contabo](https://contabo.com/en)**
+
+<div align="center">
+  <h1> Automatic Installation </h1>
+</div>
+
+```
+source <(curl -s https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_scripts/main/gitopia/install.sh)
+```
+
+<div align="center">
+  <h1> Manual Installation </h1>
+</div>
 
 ### Install dependencies
 
