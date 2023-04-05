@@ -4,7 +4,7 @@
 
 ### Nibiru
 
-<figure><img src="https://github.com/MirrorReflectionTeam/cosmos_testnet_manuals/blob/main/project_files/nibiru.jpg" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/nibiru.jpg" width="150" alt=""><figcaption></figcaption></figure>
 
 **[Website](https://nibiru.fi/)** | **[Explorer](https://nibiru.exploreme.pro/)**
 
