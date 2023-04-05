@@ -3,7 +3,7 @@
 </div>
 
 |                                                                    <div style="width:150px">IMAGE</div>                                                                    |     <div style="width:200px">NAME</div>      |                                         <div style="width:250px">GUIDE LINK</div>                                          |                                                  <div style="width:250px">EXPLORER</div>                                                 |
-|                                                  |
+                                                  |
 | :------------------------------------------------------------------------------------------------------------------------------------------: | :-----------: | :-----------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
 | <img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/andromeda.jpg" width="90" alt=""> | **ANDROMEDA** | [GUIDE](https://github.com/MirrorReflectionTeam/cosmos_testnet_manuals/tree/main/andromeda) | [VALIDATOR](https://andromeda.exploreme.pro/validator/andrvaloper187qg8np6zngwpsdmguf3jxwdj5hdwmh7v7awce)  |
 |  <img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/defund.jpg" width="90" alt="">   |  **DEFUND**   |  [GUIDE](https://github.com/MirrorReflectionTeam/cosmos_testnet_manuals/tree/main/defund)   | [VALIDATOR](https://defund.explorers.guru/validator/defundvaloper1v0emcp5u268etyz34x5wqdzzzuu33hsxycrgzr)  |
