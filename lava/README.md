@@ -27,7 +27,7 @@
 </div>
 
 ```
-source <(curl -s https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_scripts/main/gitopia/install.sh)
+source <(curl -s https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_scripts/main/lava/install.sh)
 ```
 
 ### Install dependencies
