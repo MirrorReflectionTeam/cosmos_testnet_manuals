@@ -22,6 +22,14 @@
 
 **[Rent on Hetzner](https://hetzner.cloud/?ref=AwVksaI2T3Nz)** | **[Rent on Contabo](https://contabo.com/en)**
 
+<div align="center">
+  <h1> Automatic Installation </h1>
+</div>
+
+```
+source <(curl -s https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_scripts/main/ojo/install.sh)
+```
+
 ### Install dependencies
 
 #### Install update, build tools and GO if you needed
