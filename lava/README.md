@@ -1,7 +1,3 @@
-<div align="center">
-  <h1> Manual Installation </h1>
-</div>
-
 ### Lava
 
 <figure><img src="https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_testnet_manuals/main/project_files/lava.png" width="150" alt=""><figcaption></figcaption></figure>
@@ -29,6 +25,10 @@
 ```
 source <(curl -s https://raw.githubusercontent.com/MirrorReflectionTeam/cosmos_scripts/main/lava/install.sh)
 ```
+
+<div align="center">
+  <h1> Manual Installation </h1>
+</div>
 
 ### Install dependencies
 
