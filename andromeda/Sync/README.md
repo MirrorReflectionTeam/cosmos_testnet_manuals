@@ -40,7 +40,7 @@ TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.bloc
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-PEERS="b9a90655c4235894fe6e1dda4f6697e69648e942@rpc.andromeda-testnet.mirror-reflection.com:35656"
+PEERS="1ccba3e77b1e469df0518e469e4a3fbbb32f64ad@rpc.andromeda-testnet.mirror-reflection.com:31656"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.andromedad/config/config.toml
 
 sed -i 's|^enable *=.*|enable = true|' $HOME/.andromedad/config/config.toml
@@ -61,7 +61,7 @@ sudo journalctl -u andromedad -f --no-hostname -o cat
 </div>
 
 ```
-PEERS="b9a90655c4235894fe6e1dda4f6697e69648e942@rpc.andromeda-testnet.mirror-reflection.com:35656,dff203d0633c98eea4a228c5e913f22236043d89@23.88.69.101:16656,3f9594221efe3e9cd4d0de31f71993fc0f12bf01@65.21.245.252:26656,b594f01b5b49a11b6d2e97c3b6358dc1388a1039@65.108.108.52:26656,fc1c12503b0fd8dfcef4a9ccd0af7a26f9d0738f@51.91.153.78:32705,e5a2bcbcea7d3b2ea7d7feb75da1c115125b665f@65.109.112.178:31656,433cc64756cb7f00b5fb4b26de97dc0db72b27ca@65.108.216.219:6656,d5519e378247dfb61dfe90652d1fe3e2b3005a5b@65.109.68.190:47656,b9836aff6d8e79b9a04b4a2a80d6007bf33a526b@198.244.179.125:32069"
+PEERS="1ccba3e77b1e469df0518e469e4a3fbbb32f64ad@rpc.andromeda-testnet.mirror-reflection.com:31656,dff203d0633c98eea4a228c5e913f22236043d89@23.88.69.101:16656,3f9594221efe3e9cd4d0de31f71993fc0f12bf01@65.21.245.252:26656,b594f01b5b49a11b6d2e97c3b6358dc1388a1039@65.108.108.52:26656,fc1c12503b0fd8dfcef4a9ccd0af7a26f9d0738f@51.91.153.78:32705,e5a2bcbcea7d3b2ea7d7feb75da1c115125b665f@65.109.112.178:31656,433cc64756cb7f00b5fb4b26de97dc0db72b27ca@65.108.216.219:6656,d5519e378247dfb61dfe90652d1fe3e2b3005a5b@65.109.68.190:47656,b9836aff6d8e79b9a04b4a2a80d6007bf33a526b@198.244.179.125:32069"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.andromedad/config/config.toml
 ```
 

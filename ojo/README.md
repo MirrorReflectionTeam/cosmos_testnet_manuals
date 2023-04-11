@@ -84,7 +84,7 @@ curl -Ls https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/ojo-testn
 ### Add seeds
 
 ```
-SEEDS="5264a9742c3e2fdb3803ff4af0ecb6e127c73ab1@rpc.ojo-testnet.mirror-reflection.com:27656,3f472746f46493309650e5a033076689996c8881@ojo-testnet.rpc.kjnodes.com:50659"
+SEEDS="b314955720069e8c98acf1cf1e896b68a3e306f9@rpc.ojo-testnet.mirror-reflection.com:27656,3f472746f46493309650e5a033076689996c8881@ojo-testnet.rpc.kjnodes.com:50659"
 PEERS=""
 sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.ojo/config/config.toml
 ```

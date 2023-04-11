@@ -92,7 +92,7 @@ curl -Ls https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/gitopia-t
 ### Add seeds
 
 ```
-SEEDS="e1ab0573d55ff92fad55d2929e353904f1bbe36f@rpc.gitopia-testnet.mirror-reflection.com:31656,3f472746f46493309650e5a033076689996c8881@gitopia-testnet.rpc.kjnodes.com:41659"
+SEEDS="3057e2656a03e3414a9e6dff165094889eedad68@rpc.gitopia-testnet.mirror-reflection.com:28656,3f472746f46493309650e5a033076689996c8881@gitopia-testnet.rpc.kjnodes.com:41659"
 PEERS=""
 sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.gitopia/config/config.toml
 ```

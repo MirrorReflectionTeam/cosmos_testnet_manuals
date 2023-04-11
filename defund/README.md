@@ -84,7 +84,7 @@ curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/defund-tes
 ### Add seeds
 
 ```
-SEEDS="1f3d588a560c1560d3862c364006fc984e6b51a9@rpc.defund-testnet.mirror-reflection.com:26656,3f472746f46493309650e5a033076689996c8881@defund-testnet.rpc.kjnodes.com:40659"
+SEEDS="2c8c6a233351c22f3cd0151a14fef55dd3dd3d87@rpc.defund-testnet.mirror-reflection.com:26656,3f472746f46493309650e5a033076689996c8881@defund-testnet.rpc.kjnodes.com:40659"
 PEERS=""
 sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.defund/config/config.toml
 ```

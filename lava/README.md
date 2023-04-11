@@ -84,7 +84,7 @@ curl -Ls https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/lava-test
 ### Add seeds
 
 ```
-SEEDS="7e851a5714dff9276bd5a73b4d5c64bab6b1faca@rpc.lava-testnet.mirror-reflection.com:33656,3f472746f46493309650e5a033076689996c8881@lava-testnet.rpc.kjnodes.com:44659"
+SEEDS="282bdf5c2a47aa09c75cd3bc3d011602eb10556e@rpc.lava-testnet.mirror-reflection.com:29656,3f472746f46493309650e5a033076689996c8881@lava-testnet.rpc.kjnodes.com:44659"
 PEERS=""
 sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.lava/config/config.toml
 ```
