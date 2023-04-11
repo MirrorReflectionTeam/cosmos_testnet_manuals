@@ -29,15 +29,15 @@ uptickd tx staking create-validator \
 --moniker "YOUR_MONIKER_NAME" \
 --identity "YOUR_KEYBASE_ID" \
 --details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id uptick_7000-2 \
---commission-rate 0.05 \
---commission-max-rate 0.20 \
---commission-max-change-rate 0.01 \
---min-self-delegation 1 \
---from wallet \
---gas 1000000 \
---fees 1000000000000000auptick \
+--chain-id=uptick_7000-2 \
+--commission-rate=0.10 \
+--commission-max-rate=0.20 \
+--commission-max-change-rate=0.01 \
+--min-self-delegation=1 \
+--from=wallet \
+--gas-prices=0.1auptick \
+--gas-adjustment=1.5 \
+--gas=auto \
 -y
 ```
 
@@ -48,19 +48,19 @@ uptickd tx staking edit-validator \
 --new-moniker "YOUR_MONIKER_NAME" \
 --identity "YOUR_KEYBASE_ID" \
 --details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id uptick_7000-2 \
---commission-rate 0.05 \
---from wallet \
---gas 1000000 \
---fees 1000000000000000auptick \
+--chain-id=uptick_7000-2 \
+--commission-rate=0.1 \
+--from=wallet \
+--gas-prices=0.1auptick \
+--gas-adjustment=1.5 \
+--gas=auto \
 -y
 ```
 
 #### Unjail validator
 
 ```
-uptickd tx slashing unjail --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx slashing unjail --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### View validator details
@@ -74,37 +74,37 @@ uptickd q staking validator $(uptickd keys show wallet --bech val -a)
 #### Withdraw commission and rewards from your validator
 
 ```
-uptickd tx distribution withdraw-rewards $(uptickd keys show wallet --bech val -a) --commission --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx distribution withdraw-rewards $(uptickd keys show wallet --bech val -a) --commission --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Delegate tokens to yourself
 
 ```
-uptickd tx staking delegate $(uptickd keys show wallet --bech val -a) 1000000auptick --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx staking delegate $(uptickd keys show wallet --bech val -a) 1000000auptick --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Delegate tokens to validator
 
 ```
-uptickd tx staking delegate <TO_VALOPER_ADDRESS> 1000000auptick --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx staking delegate YOUR_TO_VALOPER_ADDRESS 1000000auptick --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Redelegate tokens to validator
 
 ```
-uptickd tx staking redelegate $(uptickd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000auptick --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx staking redelegate $(uptickd keys show wallet --bech val -a) YOUR_TO_VALOPER_ADDRESS 1000000auptick --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Unbond tokens from your validator
 
 ```
-uptickd tx staking unbond $(uptickd keys show wallet --bech val -a) 1000000auptick --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx staking unbond $(uptickd keys show wallet --bech val -a) 1000000auptick --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Send tokens to wallet
 
 ```
-uptickd tx bank send wallet <TO_WALLET_ADDRESS> 1000000auptick --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx bank send wallet YOUR_TO_WALLET_ADDRESS 1000000auptick --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 ## Governance
@@ -124,25 +124,25 @@ uptickd query gov proposal 1
 #### Vote 'Yes'
 
 ```
-uptickd tx gov vote 1 yes --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx gov vote 1 yes --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Vote 'No'
 
 ```
-uptickd tx gov vote 1 no --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx gov vote 1 no --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Vote 'Abstain'
 
 ```
-uptickd tx gov vote 1 abstain --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx gov vote 1 abstain --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 #### Vote 'No With Veto'
 
 ```
-uptickd tx gov vote 1 NoWithVeto --from wallet --chain-id uptick_7000-2 --gas 1000000  --fees 1000000000000000auptick -y
+uptickd tx gov vote 1 no_with_veto --from wallet --chain-id uptick_7000-2 --gas-prices 0.1auptick --gas-adjustment 1.5 --gas auto -y 
 ```
 
 ## Utility
