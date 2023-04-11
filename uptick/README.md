@@ -134,7 +134,7 @@ EOF
 ### Download snapshot
 
 ```
-curl https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/uptick-testnet/uptick_117-1_latest.tar | tar -xf - -C $HOME/.ojo/data
+curl https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/uptick-testnet/uptick_117-1_latest.tar | tar -xf - -C $HOME/.uptickd/data
 ```
 
 ### Start service and check the logs
