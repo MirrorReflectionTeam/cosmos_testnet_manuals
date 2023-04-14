@@ -145,7 +145,9 @@ sudo systemctl start ojod
 sudo journalctl -u ojod -f --no-hostname -o cat
 ```
 
-### Management
+<div align="center">
+  <h1> Management </h1>
+</div>
 
 When node is synced you must see **FALSE** after command
 
