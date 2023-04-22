@@ -145,7 +145,9 @@ sudo systemctl start defundd
 sudo journalctl -u defundd -f --no-hostname -o cat
 ```
 
-### Management
+<div align="center">
+  <h1> Management </h1>
+</div>
 
 When node is synced you must see **FALSE** after command
 
