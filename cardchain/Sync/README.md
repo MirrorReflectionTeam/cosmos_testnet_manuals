@@ -10,8 +10,9 @@
 sudo systemctl stop Cardchaind
 
 cp $HOME/.Cardchain/data/priv_validator_state.json $HOME/.Cardchain/priv_validator_state.json.backup 
+Cardchaind unsafe-reset-all
 
-Cardchaind tendermint unsafe-reset-all --home $HOME/.Cardchain --keep-addr-book 
+curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/cardchain-testnet/addrbook.json > $HOME/.Cardchain/config/addrbook.json
 curl https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/cardchain-testnet/Testnet3_latest.tar | tar -xf - -C $HOME/.Cardchain/data
 
 mv $HOME/.Cardchain/priv_validator_state.json.backup $HOME/.Cardchain/data/priv_validator_state.json 
@@ -30,8 +31,9 @@ sudo journalctl -u Cardchaind -f --no-hostname -o cat
 sudo systemctl stop Cardchaind
 
 cp $HOME/.Cardchain/data/priv_validator_state.json $HOME/.Cardchain/priv_validator_state.json.backup
-Cardchaind tendermint unsafe-reset-all --home $HOME/.Cardchain --keep-addr-book
+Cardchaind unsafe-reset-all
 
+curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/cardchain-testnet/addrbook.json > $HOME/.Cardchain/config/addrbook.json
 SNAP_RPC="https://rpc.cardchain-testnet.mirror-reflection.com:443"
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height)
