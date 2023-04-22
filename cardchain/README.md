@@ -146,7 +146,9 @@ sudo systemctl start Cardchaind
 sudo journalctl -u Cardchaind -f --no-hostname -o cat
 ```
 
-### Management
+<div align="center">
+  <h1> Management </h1>
+</div>
 
 When node is synced you must see **FALSE** after command
 
