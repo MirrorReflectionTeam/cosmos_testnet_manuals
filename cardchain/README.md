@@ -191,6 +191,7 @@ Cardchaind tx staking create-validator \
 --commission-max-change-rate=0.05 \
 --min-self-delegation=1 \
 --from=wallet \
+--fees=20ubpf \
 -y
 ```
 
