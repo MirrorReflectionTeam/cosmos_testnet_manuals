@@ -26,7 +26,7 @@ banksyd q bank balances $(Cardchaind keys show wallet -a)
 banksyd tx staking create-validator \
 --amount=1000000upica \
 --pubkey=$(banksyd tendermint show-validator) \
---moniker="$NODE_MONIKER" \
+--moniker="YOUR_MONIKER_NAME" \
 --chain-id=banksy-testnet-2 \
 --commission-rate=0.10 \
 --commission-max-rate=0.20 \
@@ -43,7 +43,7 @@ banksyd tx staking create-validator \
 
 ```
 banksyd tx staking edit-validator \
---moniker="$NODE_MONIKER" \
+--moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --chain-id=banksy-testnet-2 \
