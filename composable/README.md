@@ -15,7 +15,7 @@
 
 ### Hardware Requirements
 
-8CPU 32RAM 200GB
+8CPU 16RAM 200GB
 
 **[Rent on Hetzner](https://hetzner.cloud/?ref=AwVksaI2T3Nz)** | **[Rent on Contabo](https://contabo.com/en)**
 
