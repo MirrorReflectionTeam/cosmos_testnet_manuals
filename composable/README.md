@@ -72,7 +72,7 @@ banksyd version
 
 ```
 banksyd config chain-id banksy-testnet-2
-banksyd init $NODE_MONIKER --chain-id banksy-testnet-2
+banksyd init "$NODE_MONIKER" --chain-id banksy-testnet-2
 ```
 
 ### Download genesis and addrbook
