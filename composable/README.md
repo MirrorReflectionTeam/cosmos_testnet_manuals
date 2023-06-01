@@ -63,15 +63,15 @@ cd $HOME
 rm -rf composable-testnet
 git clone https://github.com/notional-labs/composable-testnet.git
 cd composable-testnet
-git checkout v2.3.5
+git checkout v2.3.3-testnet2fork
 make install
 ```
 
 ### Initialize the node
 
 ```
-banksyd config chain-id banksy-testnet-3
-banksyd init $NODE_MONIKER --chain-id banksy-testnet-3
+banksyd config chain-id banksy-testnet-2
+banksyd init $NODE_MONIKER --chain-id banksy-testnet-2
 ```
 
 ### Download genesis and addrbook
@@ -134,7 +134,7 @@ EOF
 ### Download snapshot
 
 ```
-curl -L https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/banksy-testnet-3_latest.tar | tar -xf - -C $HOME/.banksy/data
+curl -L https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/banksy-testnet-2_latest.tar | tar -xf - -C $HOME/.banksy/data
 ```
 
 ### Start service and check the logs
