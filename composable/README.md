@@ -173,10 +173,10 @@ SAVE YOUR INPUT SEED PHRASE (24 words)
 cat $HOME/.banksy/config/priv_validator_key.json
 ```
 
-### Go to [discord channel](https://discord.gg/composable) #get validator-role and go to testnet-3-faucet
+### Go to [discord channel](https://discord.gg/composable) #get validator-role and go to testnet-2-faucet
 
 ```
-$request YOUR_WALLET_ADDRESS
+$request YOUR_WALLET_ADDRESS composable
 ```
 
 ### Create Validator
@@ -185,7 +185,7 @@ $request YOUR_WALLET_ADDRESS
 banksyd tx staking create-validator \
 --amount=1000000upica \
 --pubkey=$(banksyd tendermint show-validator) \
---moniker="$NODE_MONIKER" \
+--moniker="YOUR_MONIKER_NAME" \
 --chain-id=banksy-testnet-2 \
 --commission-rate=0.10 \
 --commission-max-rate=0.20 \
