@@ -68,5 +68,5 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.banksy/c
 </div>
 
 ```
-curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
+curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/addrbook.json > $HOME/.banksy/config/addrbook.json
 ```

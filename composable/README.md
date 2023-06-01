@@ -78,8 +78,8 @@ banksyd init $NODE_MONIKER --chain-id banksy-testnet-2
 ### Download genesis and addrbook
 
 ```
-curl -Ls https://rpc.composable-testnet.mirror-reflection.com/genesis | jq -r .result.genesis > $HOME/.defund/config/genesis.json
-curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
+curl -Ls https://rpc.composable-testnet.mirror-reflection.com/genesis | jq -r .result.genesis > $HOME/.banksy/config/genesis.json
+curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/addrbook.json > $HOME/.banksy/config/addrbook.json
 ```
 
 ### Add seeds
@@ -87,7 +87,7 @@ curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable
 ```
 SEEDS="a35221ab84e836c05d5a4689c78322833523233f@rpc.composable-testnet.mirror-reflection.com:32656,3f472746f46493309650e5a033076689996c8881@composable-testnet.rpc.kjnodes.com:15959"
 PEERS=""
-sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.defund/config/config.toml
+sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.banksy/config/config.toml
 ```
 
 ### Set pruning
