@@ -12,7 +12,6 @@ sudo systemctl stop banksyd
 cp $HOME/.banksy/data/priv_validator_state.json $HOME/.banksy/priv_validator_state.json.backup 
 banksyd tendermint unsafe-reset-all --home $HOME/.banksy --keep-addr-book 
 
-curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
 curl -L https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/banksy-testnet-2_latest.tar | tar -xf - -C $HOME/.banksy/data
 
 mv $HOME/.banksy/priv_validator_state.json.backup $HOME/.banksy/data/priv_validator_state.json 
@@ -33,7 +32,6 @@ sudo systemctl stop banksyd
 cp $HOME/.banksy/data/priv_validator_state.json $HOME/.banksy/priv_validator_state.json.backup
 banksyd tendermint unsafe-reset-all --home $HOME/.banksy --keep-addr-book
 
-curl -s https://snapshots-cosmos.mirror-reflection.com/cosmos-testnet/composable-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
 SNAP_RPC="https://rpc.composable-testnet.mirror-reflection.com:443"
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height)
