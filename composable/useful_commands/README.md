@@ -15,7 +15,7 @@ banksyd keys add wallet --recover
 #### Query Wallet Balance
 
 ```
-banksyd q bank balances $(Cardchaind keys show wallet -a)
+banksyd q bank balances $(banksyd keys show wallet -a)
 ```
 
 ## Validator
